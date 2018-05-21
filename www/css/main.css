@@ -1,0 +1,68 @@
+#myMap{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+a{
+    text-decoration: none;
+}
+line {
+    fill:blue;
+    stroke: blue;
+    stroke-width: 6;
+    fill-opacity:0.5;
+    stroke-opacity:0.5
+}
+
+circle {
+    fill:blue;
+    stroke: blue;
+    stroke-width: 1;
+    fill-opacity:0.5;
+    stroke-opacity:0.9
+}
+
+.myEndLocation {
+    fill: red;
+    stroke:red;
+    stroke-width:.75;
+    fill-opacity:0.5;
+    stroke-opacity:0.9
+}
+
+.myStartLocation {
+    fill: blue;
+    stroke:black;
+    stroke-width:.75;
+    fill-opacity:0.5;
+    stroke-opacity:0.9
+}
+.ui-header{
+    background-color: #421C52;
+}
+.ui-footer{
+    background-color: #421C52;
+}
+ul{
+    background-color: blue;
+}
+#roomDisplay{
+    box-shadow: 2px 2px 5px gray;
+    border: solid gray 1px;
+    padding-left: 15px;
+    background-color: #BDAEC6;
+}
+#directionList{
+    box-shadow: 2px 2px 5px gray;
+    border: solid gray 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #BDAEC6;
+}
+#directionListStart{
+    box-shadow: 2px 2px 5px gray;
+    border: solid gray 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #BDAEC6;
+}

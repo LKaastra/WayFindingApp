@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta name="viewport" content="width-device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>LKCB Mapping</title>
+    <!--jQuery library-->
+    <link rel="stylesheet" href="css/themes/my-custom-theme.css"/>
+    <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css"/>
+    <script src="js/lib/jquery-2.1.4.js"></script>
+    <!-- jQuery Mobile Library-->
+    <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+    <script src="js/lib/jquery.validate.js"></script>
+    <!--graphing library-->
+    <!--jQuery Mobile Stylesheet-->
+    <link rel="stylesheet" type="text/css" href="css/lib/jquery.mobile-1.4.5.css">
+    <!--my scripts and styleSheets-->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="js/DAL.js"></script>
+    <script src="js/Database.js"></script>
+    <script src="js/Fascade.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/graph.js"></script>
+</head>
+<body>
+<div id="mainPageLKCB" data-role="page">
+    <header data-role="header" data-theme="b" data-position="fixed">
+        <h1>Welcome!</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#mainPageLKCB" data-icon="search" class="ui-btn-active ui-state-persist">Search</a></li>
+                <li><a href="#mapPageLKCB" data-theme="a" data-icon="location">Map</a></li>
+                <li><a href="#directionLKCB" data-theme="a" data-icon="bars">Directions</a></li>
+                <li><a href="#roomsLKCB" data-theme="a" data-icon="home">Rooms</a></li>
+                <li><a href="#aboutLKCB" data-theme="a" data-icon="info">About</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+
+        <h4>Welcome to our Route Finding App! Please select the room you are at and the room you wish to go to.</h4>
+        <form id="newMap">
+            <label for="selectFrom">Where Are you?</label>
+
+            <select id="selectFrom">
+            </select>
+
+            <label for="selectTo">Where Are you Going?</label>
+
+            <select id="selectTo">
+            </select>
+            <br>
+            <a data-theme="b" href="#mapPageLKCB">
+                <button type="button" data-role="button" id="newSearch" data-theme="b">Go!</button>
+            </a>
+
+        </form>
+    </section>
+    <footer data-role="footer" data-theme="b" data-position="fixed">
+        <h4>&copy Chris Banks & Lucas Kaastra</h4>
+    </footer>
+</div>
+<div id="mapPageLKCB" data-role="page">
+    <header data-role="header" data-theme="b" data-position="fixed">
+        <h1>Your Route</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#mainPageLKCB" data-icon="search" data-theme="a">Search</a></li>
+                <li><a href="#mapPageLKCB" data-theme="a" data-icon="location" class="ui-btn-active ui-state-persist">Map</a>
+                </li>
+                <li><a href="#directionLKCB" data-theme="a" data-icon="bars">Directions</a></li>
+                <li><a href="#roomsLKCB" data-theme="a" data-icon="home">Rooms</a></li>
+                <li><a href="#aboutLKCB" data-theme="a" data-icon="info">About</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+        <svg class="map" width="480" height="480" id="myMap">
+
+            <svg viewBox="200 120 480 480" preserveAspectRatio="none">
+                <image x="0" y="0" height="160%" width="160%" xlink:href="img/A2.svg"></image>
+            </svg>
+        </svg>
+        <a data-theme="b" href="#mainPageLKCB">
+            <button type="button" data-role="button" data-icon="back" id="backToSearch" data-theme="b">Back!</button>
+        </a>
+    </section>
+    <footer data-role="footer" data-theme="b" data-position="fixed">
+        <h4>&copy Chris Banks & Lucas Kaastra</h4>
+    </footer>
+</div>
+<div id="directionLKCB" data-role="page">
+    <header data-role="header" data-theme="b" data-position="fixed">
+        <h1>Directions</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#mainPageLKCB" data-icon="search" data-theme="a">Search</a></li>
+                <li><a href="#mapPageLKCB" data-theme="a" data-icon="location">Map</a></li>
+                <li><a href="#directionLKCB" data-theme="a" data-icon="bars" class="ui-btn-active ui-state-persist">Directions</a>
+                </li>
+                <li><a href="#roomsLKCB" data-theme="a" data-icon="home">Rooms</a></li>
+                <li><a href="#aboutLKCB" data-theme="a" data-icon="info">About</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+        <ul data-role="listview" id="directionListStart" data-icon="" data-inset="true">
+            <h4>Please select a route.</h4>
+        </ul>
+        <ul data-role="listview" id="directionList" data-icon="" data-inset="true">
+            <a data-theme="b" href="#mainPageLKCB">
+                <button type="button" data-role="button" data-icon="back" id="toSearch" data-theme="b">Go To Search
+                </button>
+            </a>
+
+        </ul>
+    </section>
+    <footer data-role="footer" data-theme="b" data-position="fixed">
+        <h4>&copy Chris Banks & Lucas Kaastra</h4>
+    </footer>
+</div>
+<div id="roomsLKCB" data-role="page">
+    <header data-role="header" data-theme="b" data-position="fixed">
+        <h1>Rooms Lookup</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#mainPageLKCB" data-icon="search" data-theme="a">Search</a></li>
+                <li><a href="#mapPageLKCB" data-theme="a" data-icon="location">Map</a></li>
+                <li><a href="#directionLKCB" data-theme="a" data-icon="bars">Directions</a></li>
+                <li><a href="#roomsLKCB" data-theme="a" data-icon="home"
+                       class="ui-btn-active ui-state-persist">Rooms</a></li>
+                <li><a href="#aboutLKCB" data-theme="a" data-icon="info">About</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+        <select id="selectSearch">
+        </select>
+        <ul data-role="listview" id="roomDisplay" data-inset="true">
+            <h4>Please Select a Room</h4>
+        </ul>
+    </section>
+    <footer data-role="footer" data-theme="b" data-position="fixed">
+        <h4>&copy Chris Banks & Lucas Kaastra</h4>
+    </footer>
+</div>
+<div id="aboutLKCB" data-role="page">
+    <header data-role="header" data-theme="b" data-position="fixed">
+        <h1>About Us</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#mainPageLKCB" data-icon="search" data-theme="a">Search</a></li>
+                <li><a href="#mapPageLKCB" data-theme="a" data-icon="location">Map</a></li>
+                <li><a href="#directionLKCB" data-theme="a" data-icon="bars">Directions</a></li>
+                <li><a href="#roomsLKCB" data-theme="a" data-icon="home">Rooms</a></li>
+                <li><a href="#aboutLKCB" data-theme="a" data-icon="info"
+                       class="ui-btn-active ui-state-persist">About</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+        <h4>Chris Banks</h4>
+        <p>Current Computer Programmer/Analyst Student at Conestoga College.</p>
+        <br>
+        <h4>Lucas Kaastra</h4>
+        <p>Current Computer Programmer/Analyst Student at Conestoga College.</p>
+    </section>
+    <footer data-role="footer" data-theme="b" data-position="fixed">
+        <h4>&copy Chris Banks & Lucas Kaastra</h4>
+    </footer>
+</div>
+</body>
+</html>
